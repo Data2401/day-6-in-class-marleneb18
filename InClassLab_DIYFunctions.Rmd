@@ -16,7 +16,7 @@ The questions from your notes today are below, please copy your answers them her
 1. Write your own function that takes the temperature in Fahrenheit as an argument and returns the Celcius equivalent. 
 
 ```{R}
-
+calculate_celcius <- function(fahrenheit) {celcius <- (fahrenheit )-32 * 5/9}
 
 ```
 
@@ -24,37 +24,61 @@ The questions from your notes today are below, please copy your answers them her
 
 
 ```{r}
-
-
+convert <- function( faren, feet) { 
+  calc <- (faren - 32)* (5/9)
+  meters <- feet * 0.3048
+  return(c(calc, meters))
+  }
+convert(212, 3)
 ```
 
 
 3. Write a function that prints out a statement of whether the number passed as an argument is positive, negative or 0. 
 
 ```{R}
-
-
+check_number <- function(num){
+  if (num > 0) {
+    print ("number is positive")
+  } else if (num < 0) {
+    print (" number is negative")
+  } else {
+    print ("number is 0")
+  }
+}
 ```
 
 4. Write a function that returns the absolute value of the number passed as an argument.
    + Don't use `abs()`. Use the flow from problem 1 and multiply by negative one as necessary. 
    
 ```{r}
-
-
+absolute_value <- function(num){
+  if (num >= 0) {print(num)
+  }else {print(num * -1)
+      }
+}
+absolute_value(-15)
 ```
 
 5. Hard mode: add an error check to that function that prints out the string "Please pass a numerical value to this function" if the user passes the function a string. 
    + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
    
 ```{r}
-
+string_value <- function(num) {if (is.character(num)) { 
+  print ("please pass a numerical value to this function")
+  return(NULL)
+}
+  if (!is.numeric(num)) {
+    print("please pass a numerical value to this function")
+    return(NULL)
+  }
+  return(ifelse(num >= 0, num, -num))
+  }
+print(string_value("cat"))
 
 
 ```
    
    
-
 
 
 
